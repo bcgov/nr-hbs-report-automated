@@ -1,3 +1,0 @@
-#timberwest_monthly_report
-
-from db_connection import get_connection
