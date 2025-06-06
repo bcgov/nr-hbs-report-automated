@@ -4,7 +4,6 @@ from db_connection import get_connection
 
 # Test database connection
 test_conn = get_connection("test")
-print("Test connection:", test_conn)
 if test_conn:
     cursor = test_conn.cursor()
     cursor.execute("SELECT * FROM dual")
