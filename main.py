@@ -1,6 +1,7 @@
 # main.py
 
-from db_connection import get_connection
+#from db_connection import get_connection
+from my_db_module import get_connection
 
 # Test database connection
 test_conn = get_connection("test")

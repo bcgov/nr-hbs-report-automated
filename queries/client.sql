@@ -1,0 +1,6 @@
+    SELECT FC.CLIENT_NUMBER 		AS ClientNum, 
+           DECODE (FC.CLIENT_TYPE_CODE, 'I', NULL, FC.CLIENT_NAME) AS CLIENTNAME
+    FROM FOREST_CLIENT FC
+    
+    
+    						  
