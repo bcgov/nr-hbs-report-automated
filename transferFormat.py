@@ -79,3 +79,12 @@ cursor.close()
 conn.close()
 
 print(f"[+] Zipped MDB file created: {zip_file_path}")
+
+# Clean up the original .csv files
+for filename in os.listdir(csv_folder):
+    if filename.lower().endswith(".csv"):
+        try:
+            os.remove(os.path.join(csv_folder, filename))
+            print(f"[-] Deleted CSV: {filename}")
+        except Exception as e:
+            print(f"[!] Failed to delete {filename}: {e}")

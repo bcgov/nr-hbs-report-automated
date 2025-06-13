@@ -1,0 +1,23 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250613151238
+Username: IDIR\TOUYANG
+RunAs User: IDIR\TOUYANG
+Configuration Name: 
+Machine: PF511QDL (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File C:\Users\touyang\fds_proj\HBS_Monthly_Report_Automation\run_report.ps1
+Process ID: 22244
+PSVersion: 5.1.19041.5848
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.5848
+BuildVersion: 10.0.19041.5848
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\touyang\fds_proj\HBS_Monthly_Report_Automation\logs\run_log_20250613.txt
+===== Starting Data Job at 06/13/2025 15:12:38 =====
+Running 64-bit script...
+
+Running 32-bit script...
