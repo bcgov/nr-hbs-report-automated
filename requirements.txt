@@ -1,6 +1,9 @@
-oracledb==3.1.1
-<<<<<<< HEAD
+chardet==5.2.0
+numpy==2.3.0
+pandas==2.3.0
+pyodbc==5.2.0
+python-dateutil==2.9.0.post0
 python-dotenv==1.1.0
-=======
->>>>>>> a02476aee52c2858dddbe4c3799724e6af8f000c
-openpyxl>=3.1.0
+pytz==2025.2
+six==1.17.0
+tzdata==2025.2
