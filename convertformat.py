@@ -14,6 +14,10 @@ yyyymm = datetime.now().strftime("%Y%m")
 data_folder = os.path.join(base_folder, yyyymm)
 output_folder = os.path.join(data_folder, "binarysheet")
 
+# Create the folder if it doesn't exist
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
+
 # Build file map: xlsx → xlsb template
 file_map = {}
 for file in os.listdir(data_folder):
