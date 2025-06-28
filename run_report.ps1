@@ -9,8 +9,8 @@ $py32 = "C:\Users\touyang\fds_proj\HBS_Monthly_Report_Automation\venv32\Scripts\
 # Email (if error occurs)
 #$emailTo = "ting.ouyang@gov.bc.ca"
 #$emailFrom = "taskrunner@yourdomain.com"
-#$smtpServer = "smtp.yourdomain.com"
-#$smtpPort = 587
+#$smtpServer = "apps.smtp.gov.bc.ca"
+#$smtpPort = 25
 #$smtpUser = "taskrunner@yourdomain.com"
 #$smtpPass = "your_app_password"
 

@@ -1,0 +1,105 @@
+**********************
+PowerShell transcript start
+Start time: 20250626092715
+Username: IDIR\TOUYANG
+RunAs User: IDIR\TOUYANG
+Configuration Name: 
+Machine: PF511QDL (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Users\touyang\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 12156
+PSVersion: 7.5.1
+PSEdition: Core
+GitCommitId: 7.5.1
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\Users\touyang\fds_proj\HBS_Monthly_Report_Automation\logs\run_log_20250626.txt
+===== Starting Data Job at 06/26/2025 09:27:15 =====
+Running 64-bit script...
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\touyang\fds_proj\HBS_Monthly_Report_Automation\venv64\Lib\site-packages\pandas\io\sql.py", line 2662, in
+execute
+    cur = self.con.cursor()
+          ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'cursor'
+Running 32-bit script...
+
+===== Finished Successfully at 06/26/2025 09:27:31 =====
+**********************
+PowerShell transcript end
+End time: 20250626092731
+**********************
+**********************
+PowerShell transcript start
+Start time: 20250626093119
+Username: IDIR\TOUYANG
+RunAs User: IDIR\TOUYANG
+Configuration Name: 
+Machine: PF511QDL (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\touyang\.vscode\extensions\ms-vscode.powershell-2025.0.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.0.0' -BundledModulesPath 'c:\Users\touyang\.vscode\extensions\ms-vscode.powershell-2025.0.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.0.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\touyang\AppData\Roaming\Code\logs\20250626T092626\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\touyang\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-24304-668692.json' -FeatureFlags @() 
+Process ID: 6932
+PSVersion: 7.5.1
+PSEdition: Core
+GitCommitId: 7.5.1
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\Users\touyang\fds_proj\HBS_Monthly_Report_Automation\logs\run_log_20250626.txt
+===== Starting Data Job at 06/26/2025 09:31:19 =====
+Running 64-bit script...
+AttributeError: 'NoneType' object has no attribute 'cursor'
+Running 32-bit script...
+
+===== Finished Successfully at 06/26/2025 09:31:24 =====
+**********************
+PowerShell transcript end
+End time: 20250626093124
+**********************
+**********************
+PowerShell transcript start
+Start time: 20250626093647
+Username: IDIR\TOUYANG
+RunAs User: IDIR\TOUYANG
+Configuration Name: 
+Machine: PF511QDL (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\touyang\.vscode\extensions\ms-vscode.powershell-2025.0.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.0.0' -BundledModulesPath 'c:\Users\touyang\.vscode\extensions\ms-vscode.powershell-2025.0.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.0.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\touyang\AppData\Roaming\Code\logs\20250626T092626\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\touyang\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-24304-668692.json' -FeatureFlags @() 
+Process ID: 6932
+PSVersion: 7.5.1
+PSEdition: Core
+GitCommitId: 7.5.1
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\Users\touyang\fds_proj\HBS_Monthly_Report_Automation\logs\run_log_20250626.txt
+===== Starting Data Job at 06/26/2025 09:36:47 =====
+Running 64-bit script...
+
+Running 32-bit script...
+
+===== Finished Successfully at 06/26/2025 10:24:26 =====
+**********************
+PowerShell transcript end
+End time: 20250626102426
+**********************
