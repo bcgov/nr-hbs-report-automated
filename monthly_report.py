@@ -8,6 +8,7 @@ from openpyxl import Workbook
 import pyodbc
 import getpass
 import yaml
+from openpyxl.cell.cell import ILLEGAL_CHARACTERS_RE
 
 # --- CONFIGURATION ---
 yyyymm = datetime.now().strftime("%Y%m")
@@ -25,6 +26,12 @@ queries_root = os.path.normpath(config["paths"]["queries_root"])
 templates_root = os.path.normpath(config["paths"]["templates_root"])
 reports_root = os.path.normpath(config["paths"]["reports_root"])
 
+def clean_cell_value(value):
+    if isinstance(value, str):
+        # Replace each illegal character with a question mark
+        return ILLEGAL_CHARACTERS_RE.sub("?", value)
+    return value
+
 # --- CHUNK export function ---
 CHUNK_SIZE = 50000
 
@@ -37,7 +44,8 @@ def export_query_to_xlsx(query, filename, conn, output_dir, params = None):
 
     for chunk in pd.read_sql(query, conn, params=params,chunksize=CHUNK_SIZE):
         for row in chunk.itertuples(index=False):
-            ws.append(row)
+            cleaned_row = [clean_cell_value(cell) for cell in row]
+            ws.append(cleaned_row)
         row_counter += len(chunk)
         print(f"    [✓] Appended chunk of {len(chunk)} rows")
 
@@ -68,7 +76,8 @@ def export_query_to_xlsx_with_params(query, filename, conn, params):
 
     for chunk in pd.read_sql(query, conn, params=params, chunksize=CHUNK_SIZE):
         for row in chunk.itertuples(index=False):
-            ws.append(row)
+            cleaned_row = [clean_cell_value(cell) for cell in row]
+            ws.append(cleaned_row)
         print(f"    [✓] Appended chunk of {len(chunk)} rows")
 
     wb.save(xlsb_path)
@@ -126,4 +135,4 @@ for person in config["reportTo"]:
 
 # --- CLEANUP ---
 conn.close()
-print("\n[✓] All XLSB exports completed.")
+print("\n[✓] All XLSX exports completed.")
