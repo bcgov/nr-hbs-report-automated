@@ -3,7 +3,7 @@ import csv
 import pyodbc
 import shutil
 import zipfile
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # --- CONFIG ---
 template_mdb = "C:/Users/touyang/Desktop/timberwest_report/monthlyreport.mdb"
@@ -11,7 +11,10 @@ output_dir = "C:/Users/touyang/Desktop/timberwest_report"
 csv_folder = "C:/Users/touyang/Desktop/timberwest_report"
 
 # --- SET DATE ---
-yyyymm = datetime.now().strftime("%Y%m")
+now = datetime.now()
+first_day_this_month = now.replace(day=1)
+last_month_date = first_day_this_month - timedelta(days=1)
+yyyymm = last_month_date.strftime("%Y%m")
 new_mdb = os.path.join(output_dir, f"monthlyreport_{yyyymm}.mdb")
 
 # --- COPY TEMPLATE ---

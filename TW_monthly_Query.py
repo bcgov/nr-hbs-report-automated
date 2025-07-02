@@ -1,24 +1,34 @@
 import pandas as pd
 import sys
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 import calendar
 from my_db_module import get_connection
 import re
 
 # --- CONFIGURATION ---
-env = sys.argv[1] if len(sys.argv) > 1 else "test"
+env = sys.argv[1] if len(sys.argv) > 1 else "prod"
 env = env.lower()
-yyyymm = datetime.now().strftime("%Y%m")
 now = datetime.now()
 
 output_dir = r"C:\Users\touyang\Desktop\timberwest_report"
 os.makedirs(output_dir, exist_ok=True)
 
-# --- DATE PARAMETERS ---
-start_date = now.replace(day=1).strftime("%Y-%m-%d 00:00:00")
-last_day = calendar.monthrange(now.year, now.month)[1]
-end_date = now.replace(day=last_day).strftime("%Y-%m-%d 23:59:59")
+# Get the last day of the previous month
+first_day_this_month = now.replace(day=1)
+last_month_date = first_day_this_month - timedelta(days=1)
+
+# Extract year and month of last month
+year = last_month_date.year
+month = last_month_date.month
+
+# Format yyyymm
+yyyymm = f"{year}{month:02d}"
+
+# Start and end of last month
+start_date = datetime(year, month, 1).strftime("%Y-%m-%d 00:00:00")
+last_day = calendar.monthrange(year, month)[1]
+end_date = datetime(year, month, last_day).strftime("%Y-%m-%d 23:59:59")
 print(f"Start date: {start_date}, End date: {end_date}")  # Print the values
 
 # Chunk size for large query processing
