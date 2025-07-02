@@ -4,6 +4,7 @@ import pyodbc
 import shutil
 import zipfile
 from datetime import datetime, timedelta
+import time
 
 # --- CONFIG ---
 template_mdb = "C:/Users/touyang/Desktop/timberwest_report/monthlyreport.mdb"
@@ -71,16 +72,16 @@ for filename in os.listdir(csv_folder):
 # Path to your .mdb file (after processing is done)
 mdb_file_path = f"C:/Users/touyang/Desktop/timberwest_report/monthlyreport_{yyyymm}.mdb"
 zip_file_path = mdb_file_path.replace(".mdb", ".zip")
-
-# Create a zip file containing the .mdb file
-with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
-    zipf.write(mdb_file_path, arcname=os.path.basename(mdb_file_path))
+print(f"[+] Finished importing CSVs into {mdb_file_path}")
 
 # --- FINALIZE ---
 conn.commit()
 cursor.close()
 conn.close()
 
+# Create a zip file containing the .mdb file
+with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+    zipf.write(mdb_file_path, arcname=os.path.basename(mdb_file_path))
 print(f"[+] Zipped MDB file created: {zip_file_path}")
 
 # Clean up the original .csv files
