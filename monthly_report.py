@@ -7,6 +7,8 @@ import getpass
 import yaml
 from openpyxl.cell.cell import ILLEGAL_CHARACTERS_RE
 from openpyxl.styles import numbers
+import argparse
+from my_db_module import get_connection
 
 # --- CONFIGURATION ---
 now = datetime.now()
@@ -15,7 +17,24 @@ yyyymm = today.strftime("%Y%m")
 
 username = os.getlogin()
 base_dir = f"C:\\Users\\{username}\\Desktop\\monthly_report"
-config_path = os.path.join(base_dir, "report_config.yaml")
+
+# --- Parse Command line arguments for config ---
+parser = argparse.ArgumentParser(description = "Run monthnly report with a specified YAML config.")
+parser.add_argument(
+    "--config",
+    default=os.path.join(base_dir, "report_config.yaml"),
+    help="Path to the YAML configuration file (default: report_config.yaml in base_dir)"
+)
+parser.add_argument(
+    "--env",
+    default="prod",
+    help="Environment to use (e.g., prod, test, dev)"
+)
+args=parser.parse_args()
+
+# ---configure paths ---
+config_path = args.config
+env = args.env.lower()
 CHUNK_SIZE = 50000
 
 # --- Clean illegal characters from cell values ---
@@ -85,22 +104,8 @@ def export_query_to_xlsx(query, filename, conn, output_dir,template_path,params=
     print(f"[✓] Finished: {filename}")
 
 # --- CONNECT TO DATABASE ---
-hostname = "nrkdb03.bcgov"
-port = "1521"
-service_name = "dbp01.nrs.bcgov"
-
-username = input("Enter your database username: ")
-password = getpass.getpass("Enter your database password: ")
-
-conn_str = (
-    f"Driver={{Oracle in instantclient_19c}};"
-    f"Dbq={hostname}:{port}/{service_name};"
-    f"Uid={username};"
-    f"Pwd={password};"
-)
-
-conn = pyodbc.connect(conn_str)
-print("Connected successfully!")
+print(f"\n[+] Connecting to environment: {env}")
+conn = get_connection(env=env)
 
 def run_reports_from_yaml(conn, config_path):
     with open(config_path, "r") as f:

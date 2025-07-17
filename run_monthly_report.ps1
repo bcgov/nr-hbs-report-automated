@@ -3,7 +3,7 @@ $today = Get-Date -Format "yyyyMMdd"
 $username = $env:USERNAME
 
 $basePath =  "C:\Users\$username\fds_proj\HBS_Monthly_Report_Automation"
-$logPath = "C:\Users\$username\Desktop\monthly_report\logs\run_log_$today.txt"
+$logPath = "C:\Users\$username\fds_proj\HBS_Monthly_Report_Automation\logs\run_monthlyreport_log_$today.txt"
 $script64 = "$basePath\monthly_report.py"
 $script32 = "$basePath\convertformat.py"
 $py64 = "$basePath\venv64\Scripts\python.exe"
