@@ -35,7 +35,7 @@ args=parser.parse_args()
 # ---configure paths ---
 config_path = args.config
 env = args.env.lower()
-CHUNK_SIZE = 50000
+CHUNK_SIZE = 10000
 
 # --- Clean illegal characters from cell values ---
 def clean_cell_value(value):
