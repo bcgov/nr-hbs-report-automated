@@ -32,7 +32,7 @@ end_date = datetime(year, month, last_day).strftime("%Y-%m-%d 23:59:59")
 print(f"Start date: {start_date}, End date: {end_date}")  # Print the values
 
 # Chunk size for large query processing
-CHUNK_SIZE = 50000
+CHUNK_SIZE = 10000
 
 # --- EXPORT CSV LOGIC ---
 def export_query_to_csv(query, filename, conn):
@@ -70,6 +70,7 @@ conn = get_connection(env=env)
 sql_dir = os.path.join(os.path.dirname(__file__), "queries")
 
 queries = [
+    ("appraisal.sql", f"appraisal_{yyyymm}.csv"),
     ("client.sql", f"client_{yyyymm}.csv"),
     ("scalesite.sql", f"scalesite_{yyyymm}.csv"),
     ("Licence.sql", f"licence_{yyyymm}.csv"),
